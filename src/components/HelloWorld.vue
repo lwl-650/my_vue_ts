@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
+import { defineProps, ref } from "vue";
+import "./b.scss";
 
-defineProps<{ msg: string }>()
+defineProps<{ msg: string }>();
 
-const count = ref(0)
+const count = ref(0);
 </script>
 
 <template>

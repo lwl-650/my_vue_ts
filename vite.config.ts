@@ -1,13 +1,25 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-const path = require('path');
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
+const path = require("path");
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
+    }),
+  ],
   resolve: {
     // 配置路径别名
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   server: {
@@ -19,7 +31,7 @@ export default defineConfig({
     // proxy: {
     //   '/api': {
     //     target: 'http://localhost:8088',   //代理接口
-    //     // target: 'http://go.lwlsl.top:8088', 
+    //     // target: 'http://go.lwlsl.top:8088',
     //     changeOrigin: true,
     //     rewrite: (path) => path.replace(/^\/api/, '')
     //   },
@@ -30,5 +42,5 @@ export default defineConfig({
     //     rewrite: (path) => path.replace(/^\/dpc/, '')
     //   }
     // }
-  }
-})
+  },
+});

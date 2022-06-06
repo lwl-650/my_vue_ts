@@ -1,12 +1,37 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from "@/components/HelloWorld.vue";
+import {
+  Check,
+  Delete,
+  Edit,
+  Message,
+  Search,
+  Star,
+} from "@element-plus/icons";
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <el-row class="mb-4">
+    <el-button>Default</el-button>
+    <el-button type="primary">Primary</el-button>
+    <el-button type="success">Success</el-button>
+    <el-button type="info">Info</el-button>
+    <el-button type="warning">Warning</el-button>
+    <el-button type="danger">Danger</el-button>
+    <el-button>中文</el-button>
+  </el-row>
+  <el-row>
+    <el-button :icon="Search" circle />
+    <el-button type="primary" :icon="Edit" circle />
+    <el-button type="success" :icon="Check" circle />
+    <el-button type="info" :icon="Message" circle />
+    <el-button type="warning" :icon="Star" circle />
+    <el-button type="danger" :icon="Delete" circle />
+  </el-row>
+
+  <img alt="Vue logo" src="@/assets/img/logo.png" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <el-button v-for="item in 10" :key="item" type="success">Success</el-button>
 </template>
 
 <style>
