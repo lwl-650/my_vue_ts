@@ -29,18 +29,11 @@ import {
     <el-button type="danger" :icon="Delete" circle />
   </el-row>
 
-  <img alt="Vue logo" src="@/assets/img/logo.png" />
+
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-  <el-button v-for="item in 10" :key="item" type="success">Success</el-button>
+  <el-button v-for="item in 1" :key="item" type="success">Success</el-button>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
